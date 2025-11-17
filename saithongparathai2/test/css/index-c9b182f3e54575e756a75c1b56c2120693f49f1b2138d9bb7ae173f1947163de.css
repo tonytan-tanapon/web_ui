@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+#contact {
+  padding: 10px;
+}
+#content {
+  padding: 10px;
+}
+#ืnav-menu {
+  min-height: 100px;
+}
+#ืnav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#about {
+  padding: 10px;
+}
+#home {
+  padding: 10px;
+}
+#iyqv1 {
+  min-height: 100px;
+}
+#i0ngj {
+  min-height: 100px;
+}
+#idm0j {
+  min-height: 100px;
+}

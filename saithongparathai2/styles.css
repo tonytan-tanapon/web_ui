@@ -1,0 +1,462 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffe8df;
+}
+
+/* ========== NAVBAR ========== */
+/* ===== Navbar Wrapper ===== */
+.navbar {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+
+  position: fixed; /* ← ทำให้ค้างบนจอ */
+  top: 0; /* ← อยู่ติดขอบบน */
+  left: 0;
+  width: 100%; /* ← ให้เต็มความกว้าง */
+  z-index: 999; /* ← ไม่ให้โดนรูปทับ */
+  background: #ffe8df; /* ← ใส่พื้นหลังกันทะลุ */
+}
+/* ===== Big Capsule ===== */
+.nav-capsule {
+  width: 90%;
+  max-width: 1400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* ← ให้ทุกอย่างชิดขวา */
+
+  background: #fff3eb00;
+  border: 2px solid #d8c5b6;
+  border-radius: 50px;
+  padding: 10px 25px;
+}
+
+/* ===== Menu ===== */
+.nav-menu {
+  display: flex;
+  gap: 60px;
+  margin-right: 20px; /* เว้นห่างก่อนถึงปุ่ม */
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #8e2a15;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-menu a.active {
+  font-weight: 700;
+  color: #6c1a0a;
+}
+
+/* ===== Right Rounded Button ===== */
+.nav-btn {
+  background: linear-gradient(90deg, #d55c2d, #a6311b);
+  border: none;
+  width: 90px;
+  height: 42px;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== TEXT ABOVE IMAGES ========== */
+.hero-text {
+  text-align: center;
+  margin-top: 210px; /* ← เพิ่มให้ลงมาต่ำกว่า navbar */
+}
+
+.subtitle {
+  font-size: 24.7px;
+  color: #a40a00;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 10px 0 40px;
+  color: #a40a00;
+}
+
+/* ========== HERO IMAGE CONTAINER ========== */
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* รูปใหญ่กลาง */
+
+.hero-main-img {
+  width: 500px;
+  height: 500px;
+
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 12px solid #ffffffd0; /* <-- กรอบขาวแบบที่ต้องการ */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* เงาเพิ่มความลึก */
+
+  position: relative;
+  z-index: 10;
+}
+
+.hero-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* รูปเล็กซ้าย/ขวา */
+.side-img {
+  position: absolute;
+  width: 180px;
+  height: 240px;
+  border-radius: 30px;
+  overflow: hidden;
+  top: 30%;
+}
+
+.side-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-img.left {
+  left: 0px;
+}
+
+.side-img.right {
+  right: 0px;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+  margin-top: 120px;
+  padding: 50px 5%;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-text {
+  width: 50%;
+  color: #8e2a15;
+}
+
+.about-text h1 {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #8e2a15;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* Read More Button */
+.read-more-btn {
+  background: #8e2a15;
+  padding: 13px 30px;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Signature line */
+.about-sign {
+  margin-top: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.about-sign .line {
+  height: 4px;
+  width: 60px;
+  background: #8e2a15;
+}
+
+/* Images */
+.about-images {
+  width: 50%;
+  position: relative;
+}
+
+.about-main-img {
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-small-img {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+
+  border: 12px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-small-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== content ========== */
+/* ========== CONTENT SECTION ========== */
+.content-section {
+  margin-top: 120px;
+  background: #e85f2c; /* พื้นหลังสีส้ม */
+  padding: 60px 5% 120px;
+  border-radius: 20px;
+  color: #ffe8df;
+}
+
+.content-title {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.content-read-btn {
+  background: #c8f7d4;
+  padding: 14px 35px;
+  color: #8e2a15;
+  border-radius: 40px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+/* กล่องอาหาร */
+.dish-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: #ffe8df;
+  margin-top: -60px;
+  padding: 50px;
+  border-radius: 40px;
+  color: #8e2a15;
+}
+
+/* รูปซ้าย */
+.dish-img-large {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.dish-img-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* label บนรูป */
+.dish-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d0ffd8;
+  padding: 10px 30px;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #8e2a15;
+  font-weight: 600;
+}
+
+/* ข้อความด้านขวา */
+.dish-text {
+  flex: 1;
+}
+
+.dish-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.dish-text p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ===== Menu ===== */
+/* WRAPPER */
+.content-wrapper {
+  margin-top: 120px;
+  padding: 50px 5%;
+  background: #ffe8df;
+}
+
+/* ========== TOP ROW ========== */
+.content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e9652b;
+  padding: 40px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.content-text {
+  width: 55%;
+  color: #fff;
+}
+
+.content-text h2 {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.content-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-btn {
+  padding: 12px 28px;
+  background: #d6f6d0;
+  color: #8b2c14;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Right circle image */
+.content-img-circle {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.content-img-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== FLOATING MIDDLE IMAGE WITH LABEL ===== */
+.content-img-middle {
+  width: 420px;
+  height: 260px;
+  margin: -60px auto 0;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 10px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.content-img-middle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== TOP LABEL ===== */
+.dish-label2 {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8dfd7;
+  padding: 10px 40px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #8e2a15;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== BOTTOM ROW ========== */
+.content-bottom {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.content-img-large-circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.content-img-large-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-bottom-text {
+  width: 55%;
+  color: #8b2c14;
+}
+
+.content-bottom-text h3 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.content-bottom-text p {
+  font-size: 22px;
+  line-height: 1.7;
+}
