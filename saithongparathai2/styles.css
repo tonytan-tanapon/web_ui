@@ -1,12 +1,23 @@
+/* ความสูง navbar ประมาณนี้ ปรับได้ */
+:root {
+  --nav-height: 120px;
+}
+
+/* ให้ทุก section เลื่อนลงมาไม่ติด navbar */
+section {
+  scroll-margin-top: var(--nav-height);
+}
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "League spartan", Arial, sans-serif;
   background: #ffe8df;
 }
 
 /* ========== NAVBAR ========== */
 /* ===== Navbar Wrapper ===== */
 .navbar {
+  /* border: 5px dashed #d8c5b6; */
+
   padding-top: 15px;
   display: flex;
   justify-content: center;
@@ -20,23 +31,23 @@ body {
 }
 /* ===== Big Capsule ===== */
 .nav-capsule {
-  width: 90%;
-  max-width: 1400px;
+  width: 85%;
+  /* max-width: 1400px; */
 
   display: flex;
   align-items: center;
   justify-content: flex-end; /* ← ให้ทุกอย่างชิดขวา */
 
-  background: #fff3eb00;
+  /* background: #fff3eb00; */
   border: 2px solid #d8c5b6;
   border-radius: 50px;
-  padding: 10px 25px;
+  padding: 10px 20px; /* top and buttom, left and right ← เพิ่ม padding ด้านข้าง */
 }
 
 /* ===== Menu ===== */
 .nav-menu {
   display: flex;
-  gap: 60px;
+  gap: 30px;
   margin-right: 20px; /* เว้นห่างก่อนถึงปุ่ม */
 }
 
@@ -44,7 +55,7 @@ body {
   text-decoration: none;
   color: #8e2a15;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .nav-menu a.active {
@@ -71,14 +82,20 @@ body {
 /* ========== TEXT ABOVE IMAGES ========== */
 .hero-text {
   text-align: center;
-  margin-top: 210px; /* ← เพิ่มให้ลงมาต่ำกว่า navbar */
+  margin-top: 250px; /* ← เพิ่มให้ลงมาต่ำกว่า navbar */
+  color: #8e2a15;
+
+  /* border: 4px dashed #d8c5b6; */
 }
 
+/*Discover the Flavors of Tradition Thai food*/
 .subtitle {
-  font-size: 24.7px;
+  font-size: 20px;
   color: #a40a00;
+  /* border: 4px dashed #d8c5b6; */
 }
 
+/*Saithong Para Thai*/
 .title {
   font-size: 80px;
   font-weight: bold;
@@ -89,13 +106,14 @@ body {
 /* ========== HERO IMAGE CONTAINER ========== */
 .hero-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
   position: relative;
   margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 4px dashed #d8c5b6;
 }
 
 /* รูปใหญ่กลาง */
@@ -147,7 +165,7 @@ body {
 
 /* ========== ABOUT SECTION ========== */
 .about-section {
-  margin-top: 120px;
+  margin-top: 150px;
   padding: 50px 5%;
 }
 
@@ -375,6 +393,7 @@ body {
 
 /* Right circle image */
 .content-img-circle {
+  position: relative;
   width: 230px;
   height: 230px;
   border-radius: 50%;
@@ -390,14 +409,17 @@ body {
 }
 
 /* ===== FLOATING MIDDLE IMAGE WITH LABEL ===== */
+/* ===== LABEL บนรูป ===== */
+
 .content-img-middle {
-  width: 420px;
-  height: 260px;
+  position: relative;
+  width: 300px;
+  height: 120px;
   margin: -60px auto 0;
   position: relative;
-  border-radius: 25px;
+  border-radius: 120px;
   overflow: hidden;
-  border: 10px solid #fff;
+  /* border: 10px solid #fff; */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
@@ -405,6 +427,37 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.img-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-wrapper .img-label {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #d6f6d0;
+  padding: 10px 35px;
+  border-radius: 40px;
+
+  /* ไม่มี border แล้ว */
+  border: none;
+
+  /* ปิดเงาที่ทำให้ดูเหมือนมีขอบ */
+
+  font-size: 14px;
+  font-weight: 100;
+  color: #8e2a15;
+
+  white-space: nowrap;
+  /* min-width: 0px; */
+  text-align: center;
+
+  z-index: 10;
 }
 
 /* ===== TOP LABEL ===== */
@@ -449,6 +502,8 @@ body {
 .content-bottom-text {
   width: 55%;
   color: #8b2c14;
+  position: relative;
+  top: -100px;
 }
 
 .content-bottom-text h3 {
