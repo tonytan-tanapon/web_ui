@@ -192,6 +192,8 @@ body {
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 18px;
+  text-align: justify; /* จัดชิดซ้ายขวา */
+  text-justify: inter-word; /* กระจายคำให้พอดี */
 }
 
 /* Read More Button */
@@ -379,6 +381,8 @@ body {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 20px;
+  text-align: justify; /* จัดชิดซ้ายขวา */
+  text-justify: inter-word; /* กระจายคำให้พอดี */
 }
 
 .read-btn {
@@ -514,200 +518,265 @@ body {
 .content-bottom-text p {
   font-size: 22px;
   line-height: 1.7;
+  text-align: justify; /* จัดชิดซ้ายขวา */
+  text-justify: inter-word; /* กระจายคำให้พอดี */
 }
 
 /* ========== THAI TEA SECTION ========== */
 .thai-tea-section {
-  margin-top: 120px;
-  padding: 50px 5%;
+  margin-top: 200px;
+  padding: 40px 5% 160px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* เปลี่ยนจาก space-between → center */
   align-items: center;
   gap: 60px;
-  background: #ffe8df;
-}
 
+  background: #ffe8df;
+  position: relative;
+  z-index: 5;
+
+  max-width: 1400px; /* จำกัดความกว้าง */
+  margin-left: auto;
+  margin-right: auto; /* ทำให้ section อยู่กลางหน้าจอ */
+}
+/* CONTAINER กลาง */
+.thai-tea-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1400px; /* กรอบกลางเว็บ */
+  margin: 0 auto; /* อยู่กึ่งกลาง */
+  width: 100%;
+}
 /* LEFT TEXT */
 .tea-left {
   width: 45%;
   color: #8e2a15;
 }
 
-.tea-title {
+.tea-left h1 {
   font-size: 80px;
   font-weight: 800;
-  color: #8e2a15;
   line-height: 1.05;
 }
 
-.tea-desc {
-  margin-top: 30px;
-  font-size: 22px;
-  line-height: 1.8;
+.tea-left p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-top: 25px;
   width: 90%;
+  text-align: justify; /* จัดชิดซ้ายขวา */
+  text-justify: inter-word; /* กระจายคำให้พอดี */
 }
 
-/* RIGHT COLUMN IMAGES */
+/* RIGHT AREA */
 .tea-right {
   width: 55%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 580px;
 }
 
-/* base style for all tea images */
-.tea-img {
+/* WRAPPER */
+.tea-wrapper {
   position: absolute;
-  border-radius: 50%;
+}
+
+/* ===========================
+   Z-INDEX HIERARCHY ที่ถูกต้อง 
+   =========================== */
+
+.tea-big,
+.tea-big {
+  top: 40px;
+  left: 0px;
+  z-index: 20; /* เพิ่มจากเดิม 10 → 20 */
+}
+
+.tea-mid {
+  bottom: 20px;
+  left: 0px;
+  z-index: 10; /* อยู่กลาง */
+}
+
+.tea-tall {
+  top: 60px;
+  right: 240px;
+  z-index: 1; /* อยู่หลังสุด */
+}
+
+/* ========== IMAGE STYLES ========== */
+.tea-img {
   overflow: hidden;
-  border: 12px solid #fff;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
 }
 
-/* Big circle top-left */
-.tea-img.big {
-  width: 260px;
-  height: 260px;
-  top: 0;
-  left: 40px;
-  border-color: #a42a1b;
-  border-width: 15px;
-}
-
-/* Middle circle bottom-left */
+/* Circle sizes */
+.tea-img.big,
 .tea-img.mid {
-  width: 260px;
-  height: 260px;
-  bottom: -60px;
-  left: 80px;
-  border-color: #a42a1b;
-  border-width: 15px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  border: 12px solid #9a2415; /* กรอบปรับให้เล็กลงตามสัดส่วน */
 }
 
-/* Tall image right side */
+/* Tall image (big rounded rectangle) */
 .tea-img.tall {
-  width: 350px;
-  height: 470px;
-  right: 0;
-  top: 30px;
-  border-radius: 40px;
+  width: 360px;
+  height: 480px;
+  border-radius: 200px;
+  border: none; /* ดีไซน์ไม่มีกรอบ */
 }
 
-/* Label style */
+/* IMG */
+.tea-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* LABELS */
 .tea-label {
   position: absolute;
-  bottom: -20px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   background: #d6f6d0;
-  padding: 10px 35px;
-  border-radius: 40px;
-  color: #8e2a15;
-  font-size: 18px;
-  white-space: nowrap;
-}
-
-/* Vertical label */
-.tea-label.side {
-  bottom: 50%;
-  right: -80px;
-  transform: translateY(50%) rotate(90deg);
-  background: #d6f6d0;
   padding: 12px 35px;
   border-radius: 40px;
+  font-size: 18px;
+  color: #8e2a15;
+  white-space: nowrap;
+  z-index: 30; /* label ต้องอยู่บนสุด */
 }
 
-/* ========== CONTACT SECTION ========== */
+/* Vertical label (Thai Ice Tea) */
+.tea-label.vertical {
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  right: -90px;
+  transform: translateY(-50%) rotate(90deg);
+  padding: 14px 40px;
+}
+
+/* ============================
+   CONTACT SECTION CONTAINER
+   ============================ */
 .contact-section {
-  position: relative;
-  margin-top: 120px;
-  padding: 100px 0;
   background: #ffe8df;
+  padding: 160px 5% 100px;
+  position: relative;
   text-align: center;
   overflow: hidden;
 }
 
-.contact-center h2 {
-  font-size: 50px;
+/* MAIN TEXT */
+.contact-content h1 {
+  font-size: 60px;
   color: #8e2a15;
   font-weight: 800;
-  margin-bottom: 40px;
+  margin-top: -120px; /* ยกขึ้น 40px */
+  margin-bottom: 50px;
 }
 
-.contact-hours h3 {
+.hours h3 {
   font-size: 22px;
   font-weight: 700;
   color: #8e2a15;
   margin-top: 25px;
 }
 
-.contact-hours p {
-  font-size: 20px;
+.hours p {
+  font-size: 18px;
   color: #8e2a15;
-  margin-top: 5px;
+  margin: 5px 0 10px;
 }
 
-/* ========== SIDE IMAGES (LEFT/RIGHT) ========== */
+/* ============================
+   SIDE DECOR IMAGES (LEFT/RIGHT)
+   ============================ */
 .contact-side {
   position: absolute;
-  width: 350px;
-  height: 520px;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 340px;
+  height: 540px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 260px;
+  z-index: 1;
   overflow: hidden;
-  border-radius: 0 0 200px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.contact-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* LEFT IMAGE */
+.left-side {
+  left: -160px;
+  background-image: url("img/food-left.jpg"); /* เปลี่ยน path */
 }
 
-.contact-side.left {
-  left: 0;
-  top: 0;
-  border-radius: 0 300px 300px 0;
+/* RIGHT IMAGE */
+.right-side {
+  right: -160px;
+  background-image: url("img/food-right.jpg"); /* เปลี่ยน path */
 }
 
-.contact-side.right {
-  right: 0;
-  top: 0;
-  border-radius: 300px 0 0 300px;
-}
-
-/* ========== FOOTER BAR (BOTTOM CONTACT INFO) ========== */
+/* ============================
+   FOOTER BAR
+   ============================ */
 .footer-bar {
-  background: #e85f2c;
-  color: white;
+  margin-top: 120px;
+  background: #d8572b;
   padding: 25px 40px;
   border-radius: 40px;
-  width: 86%;
-  margin: 0 auto 60px auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+  font-size: 18px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-item {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 20px;
+  gap: 12px;
+  text-align: left;
 }
 
-.footer-icon {
-  width: 45px;
-  height: 45px;
-  background: #ffffff33;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
+.icon {
+  font-size: 26px;
 }
 
-.footer-address span {
-  display: block;
-  line-height: 1.3;
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 950px) {
+  .side-img {
+    opacity: 0.15;
+    width: 240px;
+    height: 380px;
+  }
+
+  .left-side {
+    left: -120px;
+  }
+  .right-side {
+    right: -120px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-item {
+    justify-content: center;
+    text-align: center;
+  }
 }
