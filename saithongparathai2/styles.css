@@ -113,7 +113,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px dashed #d8c5b6;
+  /* border: 4px dashed #d8c5b6; */
 }
 
 /* รูปใหญ่กลาง */
@@ -514,4 +514,200 @@ body {
 .content-bottom-text p {
   font-size: 22px;
   line-height: 1.7;
+}
+
+/* ========== THAI TEA SECTION ========== */
+.thai-tea-section {
+  margin-top: 120px;
+  padding: 50px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  background: #ffe8df;
+}
+
+/* LEFT TEXT */
+.tea-left {
+  width: 45%;
+  color: #8e2a15;
+}
+
+.tea-title {
+  font-size: 80px;
+  font-weight: 800;
+  color: #8e2a15;
+  line-height: 1.05;
+}
+
+.tea-desc {
+  margin-top: 30px;
+  font-size: 22px;
+  line-height: 1.8;
+  width: 90%;
+}
+
+/* RIGHT COLUMN IMAGES */
+.tea-right {
+  width: 55%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* base style for all tea images */
+.tea-img {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Big circle top-left */
+.tea-img.big {
+  width: 260px;
+  height: 260px;
+  top: 0;
+  left: 40px;
+  border-color: #a42a1b;
+  border-width: 15px;
+}
+
+/* Middle circle bottom-left */
+.tea-img.mid {
+  width: 260px;
+  height: 260px;
+  bottom: -60px;
+  left: 80px;
+  border-color: #a42a1b;
+  border-width: 15px;
+}
+
+/* Tall image right side */
+.tea-img.tall {
+  width: 350px;
+  height: 470px;
+  right: 0;
+  top: 30px;
+  border-radius: 40px;
+}
+
+/* Label style */
+.tea-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d6f6d0;
+  padding: 10px 35px;
+  border-radius: 40px;
+  color: #8e2a15;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+/* Vertical label */
+.tea-label.side {
+  bottom: 50%;
+  right: -80px;
+  transform: translateY(50%) rotate(90deg);
+  background: #d6f6d0;
+  padding: 12px 35px;
+  border-radius: 40px;
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+  position: relative;
+  margin-top: 120px;
+  padding: 100px 0;
+  background: #ffe8df;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-center h2 {
+  font-size: 50px;
+  color: #8e2a15;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.contact-hours h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #8e2a15;
+  margin-top: 25px;
+}
+
+.contact-hours p {
+  font-size: 20px;
+  color: #8e2a15;
+  margin-top: 5px;
+}
+
+/* ========== SIDE IMAGES (LEFT/RIGHT) ========== */
+.contact-side {
+  position: absolute;
+  width: 350px;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 0 0 200px 0;
+}
+
+.contact-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-side.left {
+  left: 0;
+  top: 0;
+  border-radius: 0 300px 300px 0;
+}
+
+.contact-side.right {
+  right: 0;
+  top: 0;
+  border-radius: 300px 0 0 300px;
+}
+
+/* ========== FOOTER BAR (BOTTOM CONTACT INFO) ========== */
+.footer-bar {
+  background: #e85f2c;
+  color: white;
+  padding: 25px 40px;
+  border-radius: 40px;
+  width: 86%;
+  margin: 0 auto 60px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.footer-icon {
+  width: 45px;
+  height: 45px;
+  background: #ffffff33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.footer-address span {
+  display: block;
+  line-height: 1.3;
 }
